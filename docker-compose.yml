@@ -1,0 +1,15 @@
+services:
+  mongoexpress:
+    image: ghcr.io/hueske-digital/mongo-express:latest
+    hostname: mongoexpress
+    environment:
+      ME_CONFIG_MONGODB_URL: "mongodb://mongo:27017/"
+      ME_CONFIG_SITE_COOKIESECRET: 'cookiesecret'
+      ME_CONFIG_SITE_SESSIONSECRET: 'sessionsecret'
+      DEBUG: "*"
+    expose:
+      - 8081
+    restart: always
+
+  mongo:
+    image: mongo:alpine

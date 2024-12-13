@@ -24,7 +24,8 @@ jobs:
         run: git clone https://github.com/mongo-express/mongo-express.git
 
       - name: Apply node-upgrade.patch
-        run: git apply ./mongo-express/node-upgrade.patch
+        run: |
+          git apply node-upgrade.patch --directory=mongo-express
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3

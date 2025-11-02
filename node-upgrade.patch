@@ -4,7 +4,7 @@ index fac5585..62538cd 100644
 +++ b/Dockerfile
 @@ -1,4 +1,4 @@
 -FROM node:18-alpine3.16 AS build
-+FROM node:23-alpine AS build
++FROM node:24-alpine AS build
  
  WORKDIR /dockerbuild
  COPY . .
@@ -13,7 +13,7 @@ index fac5585..62538cd 100644
      && rm -rf /dockerbuild/lib/scripts
  
 -FROM node:18-alpine3.16
-+FROM node:23-alpine
++FROM node:24-alpine
  
  # "localhost" doesn't mean much in a container, so we adjust our default to the common service name "mongo" instead
  # (and make sure the server listens outside the container, since "localhost" inside the container is usually difficult to access)
